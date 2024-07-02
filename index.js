@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
 const config = require('./config.js');
-
-//routes 
 const apiRouter = require('./routes/api.js')
 
+// database
+require('./database/mongoose.js');
+
+//routes 
 app.use('/', apiRouter);
 
 app.get('/', function (request, response) {
