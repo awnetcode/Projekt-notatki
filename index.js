@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const config = require('./config.js');
+const {port}  = require('./config.js');
 const apiRouter = require('./routes/api.js')
 
 // database
@@ -13,6 +13,6 @@ app.get('/', function (request, response) {
     response.send('Serwer działa!');
 });
 
-app.listen(config.port, function(){
-    console.log('Serwer słucha... http://localhost:'+config.port);
+app.listen(port, function(){
+    console.log('Serwer słucha... http://localhost:'+port);
 });
